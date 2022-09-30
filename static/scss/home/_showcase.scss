@@ -1,0 +1,65 @@
+.showcase {
+  font-weight: bold;
+  text-align: center;
+
+  @include breakpoint-up(large) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  &__description {
+    line-height: $line-height-lg;
+    color: $darkGrey;
+    font-size: $font-md-large;
+    margin-bottom: 48px;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  &__card {
+    grid-row: 2;
+
+    margin-bottom: 40px;
+    &__data {
+      font-size: $font-lg-small;
+    }
+
+    &__description {
+      font-size: $font-md-large;
+    }
+
+    &__img {
+      margin: 0 auto;
+      max-width: 50px;
+    }
+  }
+
+  &__cli {
+    @include breakpoint-up(large) {
+      display: none;
+    }
+  }
+  &__comments {
+    @include breakpoint-up(medium) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    @include breakpoint-up(large) {
+      grid-row: 3;
+      grid-column: 1 / -1;
+    }
+
+    &__comment {
+      font-size: $font-md-large;
+      margin: 20px;
+      text-align: left;
+
+      @include breakpoint-up(medium) {
+        display: block;
+        width: 35vw;
+      }
+    }
+  }
+}

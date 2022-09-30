@@ -1,0 +1,64 @@
+.footer {
+  position: relative;
+  background-color: $veryDarkBlue;
+  color: $white;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-block: 64px;
+
+  @include breakpoint-up(large) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-template-areas: "text nav socials";
+    align-items: center;
+
+    @include full-bleed("before") {
+      background-color: $veryDarkBlue;
+    }
+  }
+
+  &__text {
+    grid-area: text;
+    &__title {
+      font-size: $font-lg-small;
+      font-weight: lighter;
+    }
+
+    &__copyright {
+      font-size: $font-md-large;
+      margin-block-end: 20px;
+    }
+  }
+
+  &__nav {
+    grid-area: nav;
+    &__links {
+      &__link {
+      }
+    }
+  }
+
+  &__socials {
+    margin-block-start: 20px;
+    grid-area: socials;
+
+    @include breakpoint-up(large) {
+        margin : 0;
+    }
+    &__links {
+      display: flex;
+
+      &__link {
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
+
+        &__img {
+          width: 30px;
+        }
+      }
+    }
+  }
+}

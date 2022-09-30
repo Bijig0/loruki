@@ -1,0 +1,16 @@
+.cloud {
+  background-color: $primary-color;
+  color: $white;
+  &__title {
+    font-size: $font-lg;
+    line-height: 1.2;
+  }
+
+  &__description {
+    margin: 16px;
+  }
+
+  &__btn {
+    background-color: $darkBlue;
+  }
+}

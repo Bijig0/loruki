@@ -1,0 +1,101 @@
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary-color;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @include breakpoint-up(large) {
+    flex-direction: row;
+    justify-content: center;
+    padding-block: 40px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    // Doing this instead of top: 0, left: 0 etc. because of 1px outline issue when
+    z-index: 5;
+    width: 100%;
+    left: -100vw;
+    width: 200vw;
+    height: 100%;
+    bottom: -1px;
+    background-color: white;
+    clip-path: polygon(0 100%, 100% 100%, 100% 80%, 0 86%, 0 90%);
+
+    @include breakpoint-up(large) {
+      clip-path: polygon(0 100%, 100% 100%, 100% 67%, 9% 100%, 0 94%);
+    }
+  }
+
+  @include full-bleed("after") {
+    background-color: $primary-color;
+    z-index: 4;
+  }
+
+  &__container {
+    animation: slide-in-rtl 500ms ease-in-out;
+    z-index: 6;
+    color: $white;
+
+    @include breakpoint-up(large) {
+      text-align: left;
+      //   width: 50vw;
+    }
+
+    &__title {
+      font-size: $font-lg;
+      margin-block-start: 10px;
+      font-weight: lighter;
+      line-height: $line-height-md;
+    }
+
+    &__description {
+      margin-block: 20px;
+    }
+
+    &__btn {
+      margin-block-end: 40px;
+    }
+  }
+
+  &__form {
+    animation: slide-in-ltr 500ms ease-in-out;
+    position: relative;
+    right: 40px;
+    z-index: 6;
+    width: 100%;
+    max-width: 400px;
+    bottom: 5px;
+    background-color: $white;
+    text-align: left;
+
+    @include breakpoint-up(large) {
+      flex: 1 0 1;
+    }
+
+    &__title {
+      font-size: 24px;
+      font-weight: lighter;
+      margin-block: 10px;
+    }
+
+    &__input {
+      width: 100%;
+      display: block;
+      margin-block: 30px;
+      border-block-end: 1px solid $grey;
+
+      &::placeholder {
+        font-weight: bolder;
+      }
+    }
+
+    &__btn {
+      background-color: $primary-color;
+    }
+  }
+}

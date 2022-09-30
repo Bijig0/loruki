@@ -1,0 +1,91 @@
+.docs {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @include breakpoint-up(large) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "toc article";
+    column-gap: 20px;
+  }
+}
+
+.article {
+  text-align: left;
+  background-color: $white;
+  margin: 10px 0px 10px 0px;
+
+  @include breakpoint-up(large) {
+    margin: 10px 0px 10px 10px;
+  }
+
+  &__aside {
+    font-weight: bold;
+    color: $white;
+    background-color: $success;
+    padding: 10px 20px;
+    margin-block: 10px;
+  }
+  &__btn {
+    background-color: $primary-color;
+  }
+  &__cli {
+    display: grid;
+    justify-self: left;
+    padding: 10px;
+    color: $white;
+    background-color: $darkGrey;
+
+  }
+  &__description {
+    margin-block-end: 10px;
+  }
+  &__installation {
+  }
+  &__os {
+    margin-block: 10px;
+  }
+  &__subheading {
+    font-size: $font-md-large;
+    font-weight: bold;
+    margin-block: 20px;
+  }
+  &__title {
+    font-weight: lighter;
+    line-height: 1.2;
+    font-size: 24px;
+    margin-block: 10px;
+  }
+}
+
+.toc {
+  margin-block: 10px;
+  align-self: start;
+  text-align: left;
+  background-color: $lightGrey;
+  &__item {
+    cursor: pointer;
+    font-size: $font-md;
+    margin-block-end: 5px;
+    padding-block-end: 5px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    transition: all 50ms linear;
+
+    &:hover {
+        font-size: 1.1em;
+    }
+  }
+  &__menu {
+  }
+  &__title {
+    margin-block: 20px;
+    font-size: $font-md-large;
+  }
+
+  .frst-elm {
+    color: $primary-color;
+  }
+}

@@ -1,0 +1,28 @@
+.languages {
+    &__title {
+        font-size: $font-lg-small;
+        margin-block-end: 20px;
+    }
+
+    > dl {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__card {
+        width: 100%;
+        max-width: 150px;
+        margin: 20px 10px;
+
+        &__title {
+            font-size: $font-md-large;
+            margin-block-end: 10px;
+        }
+
+        &__img {
+            width: 50px;
+            margin: 0 auto;
+        }
+    }
+}

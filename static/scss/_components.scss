@@ -1,0 +1,69 @@
+// button styles
+
+.btn-style-fill {
+  color: $white;
+  border-radius: 5px;
+}
+
+.btn-style-outline {
+  border-radius: 5px;
+  color: $white;
+  border: 1px solid white;
+}
+
+// button sizes
+
+.btn-size-sm {
+  padding: 7px 28px;
+  font-size: $font-sm;
+}
+
+.btn-size-lg {
+  padding: 10px 30px;
+}
+
+// cards
+
+.card-style-shadow-p {
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: $white;
+  padding: 20px;
+}
+
+.card-style-shadow {
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: $white;
+}
+
+.intro-section {
+  position: relative;
+  color: $white;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: $primary-color;
+
+  @include breakpoint-up(large) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    @include full-bleed("before") {
+      background-color: $primary-color;
+    }
+  }
+
+  &__text {
+    max-width: 525px;
+  }
+
+  &__title {
+    font-size: $font-xl;
+    font-weight: lighter;
+  }
+
+  &__description {
+    font-size: $font-md-large;
+  }
+}
