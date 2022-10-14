@@ -206,6 +206,12 @@ h6 {
 }
 .intro-section__text {
   max-width: 525px;
+  margin: 0 auto;
+}
+@media (min-width: 64em) {
+  .intro-section__text {
+    margin: 0;
+  }
 }
 .intro-section__title {
   font-size: 64px;
@@ -213,6 +219,14 @@ h6 {
 }
 .intro-section__description {
   font-size: 20px;
+}
+.intro-section__img {
+  display: none;
+}
+@media (min-width: 64em) {
+  .intro-section__img {
+    display: block;
+  }
 }
 
 .header {
@@ -359,7 +373,6 @@ h6 {
 .hero__form {
   animation: slide-in-ltr 500ms ease-in-out;
   position: relative;
-  right: 40px;
   z-index: 6;
   width: 100%;
   max-width: 400px;
@@ -369,6 +382,7 @@ h6 {
 }
 @media (min-width: 64em) {
   .hero__form {
+    right: 40px;
     flex: 1 0 1;
   }
 }
@@ -441,6 +455,7 @@ h6 {
   }
 }
 .showcase__comments__comment {
+  display: block;
   font-size: 20px;
   margin: 20px;
   text-align: left;
@@ -583,12 +598,10 @@ h6 {
   max-width: 1100px;
   margin: 0 auto;
   background-color: white;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 20px;
 }
 @media (min-width: 64em) {
   .features__list {
+    display: grid;
     column-gap: 30px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -614,6 +627,9 @@ h6 {
   width: 50px;
   object-fit: contain;
   margin-inline: 10px;
+}
+.features__list__item:not(:last-child) {
+  margin-block-end: 20px;
 }
 .features__list__item__description {
   text-align: left;

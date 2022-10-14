@@ -56,6 +56,10 @@
 
   &__text {
     max-width: 525px;
+    margin: 0 auto;
+    @include breakpoint-up(large) {
+      margin: 0;
+    }
   }
 
   &__title {
@@ -65,5 +69,12 @@
 
   &__description {
     font-size: $font-md-large;
+  }
+
+  &__img {
+    display: none;
+     @include breakpoint-up(large) {
+      display: block;
+     }
   }
 }
